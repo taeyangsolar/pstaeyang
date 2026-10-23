@@ -110,7 +110,7 @@ struct GIFTimeline: View {
 
     /// Every frame for the same time, from a fast 20 ms up to a second, or each for the GIF's own.
     @ViewBuilder private var delayMenu: some View {
-        Toggle("Original", isOn: Binding(get: { timing.mode != .uniform }, set: { on in
+        Toggle("Original".localized, isOn: Binding(get: { timing.mode != .uniform }, set: { on in
             guard on else { return }
             var original = timing
             original.mode = .perFrame
